@@ -29,7 +29,7 @@ function SidebarContent() {
         </Avatar>
         <h2 className="text-xl font-semibold text-primary-foreground">{user?.name || 'Admin User'}</h2>
       </div>
-      <nav className="flex-grow p-4 space-y-2">
+      <nav className="flex-grow p-4 space-y-2" >
         {navLinks.map((link) => (
           <Link
             key={link.href}

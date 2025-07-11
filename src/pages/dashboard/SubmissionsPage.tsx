@@ -27,7 +27,7 @@ export default function SubmissionsPage() {
       try {
         const { data, error } = await supabase
           .from('submissions')
-          .select('id, "reelId", name, username, created_at')
+          .select('id, reelId, name, username, created_at')
           .eq('reelId', reelId);
 
         if (error) throw error;

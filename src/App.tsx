@@ -48,7 +48,7 @@ function App() {
             >
               <Route path="create" element={<CreateReelPage />} />
               <Route path="reels" element={<MyReelsPage />} />
-              <Route path="submissions" element={<SubmissionsPage />} />
+              <Route path="submissions/:reelId" element={<SubmissionsPage />} />
               <Route path="connect-me" element={<ConnectMePage />} />
               <Route index element={<Navigate to="reels" replace />} />
             </Route>
