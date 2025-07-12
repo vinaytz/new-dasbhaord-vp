@@ -47,7 +47,7 @@ export default function MyReelsPage() {
   }, [user, authLoading]);
 
   const copyToClipboard = (reelId: string) => {
-    const link = `${window.location.origin.replace(':5173', '')}/${reelId}`;
+    const link = `${"https://instagram-reels-dun.vercel.app/"}/${reelId}`;
     navigator.clipboard.writeText(link);
     toast.success('Link copied to clipboard!');
   };
