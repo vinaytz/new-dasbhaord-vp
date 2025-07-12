@@ -111,7 +111,7 @@ export default function CreateReelPage() {
   return (
     <div className="grid gap-12 lg:grid-cols-2">
       <div className="space-y-10">
-        <Card className="bg-gradient-to-br from-card to-secondary   shadow-2xl rounded-2xl">
+        <Card className="bg-gradient-to-br from-card to-secondary border-border shadow-2xl rounded-2xl">
           <CardHeader>
             <CardTitle className="text-3xl font-extrabold text-primary text-center">Create New Link</CardTitle>
           </CardHeader>
@@ -120,7 +120,7 @@ export default function CreateReelPage() {
               <div className="space-y-3">
                 <Label htmlFor="newReelId" className="text-lg font-semibold text-muted-foreground">New ReelID</Label>
                 <div className="flex items-center gap-3">
-                  <Input id="newReelId" type="text" value={newReelId} readOnly className="font-mono text-lg bg-input   text-foreground" />
+                  <Input id="newReelId" type="text" value={newReelId} readOnly className="font-mono text-lg bg-input border-border text-foreground" />
                   <Button type="button" variant="outline" size="icon" onClick={() => setNewReelId(generateReelId())}>
                     <RefreshCw className="h-5 w-5" />
                   </Button>
@@ -135,7 +135,7 @@ export default function CreateReelPage() {
                   value={redirectUrl}
                   onChange={(e) => setRedirectUrl(e.target.value)}
                   required
-                  className="text-lg bg-input   text-foreground placeholder-muted-foreground focus:ring-2 focus:ring-primary focus:border-primary"
+                  className="text-lg bg-input border-border text-foreground placeholder-muted-foreground focus:ring-2 focus:ring-primary focus:border-primary"
                 />
               </div>
               <Button type="submit" className="w-full bg-primary hover:bg-primary/90 text-primary-foreground font-bold py-4 text-xl rounded-lg shadow-lg transform hover:scale-105 transition-transform duration-300" disabled={isSubmitting}>
@@ -146,18 +146,18 @@ export default function CreateReelPage() {
         </Card>
 
         {lastCreatedLink && (
-          <Card className="bg-gradient-to-br from-card to-secondary shadow-2xl rounded-2xl">
+          <Card className="bg-gradient-to-br from-card to-secondary border-border shadow-2xl rounded-2xl">
             <CardHeader>
               <CardTitle className="text-2xl font-bold text-primary text-center">Link Created!</CardTitle>
             </CardHeader>
             <CardContent>
               <p className="text-md text-muted-foreground mb-4 text-center">Share this link:</p>
               <div className="flex items-center gap-3">
-                <Input type="text" value={lastCreatedLink} readOnly className="font-mono text-lg bg-input   text-foreground" />
+                <Input type="text" value={lastCreatedLink} readOnly className="font-mono text-lg bg-input border-border text-foreground" />
                 <Button
                   variant="outline"
                   size="icon"
-                  className="text-muted-foreground hover:bg-accent hover:text-accent-foreground"
+                  className="border-border text-muted-foreground hover:bg-accent hover:text-accent-foreground"
                   onClick={() => {
                     navigator.clipboard.writeText(lastCreatedLink);
                     toast.success('Link copied to clipboard!');
@@ -171,7 +171,7 @@ export default function CreateReelPage() {
         )}
       </div>
 
-      <Card className="bg-gradient-to-br from-card to-secondary shadow-2xl rounded-2xl">
+      <Card className="bg-gradient-to-br from-card to-secondary border-border shadow-2xl rounded-2xl">
         <CardHeader>
           <CardTitle className="text-3xl font-extrabold text-primary text-center">Submissions</CardTitle>
         </CardHeader>
@@ -183,11 +183,11 @@ export default function CreateReelPage() {
           ) : submissions.length > 0 ? (
             <div className="space-y-6 max-h-[70vh] overflow-y-auto pr-4">
               {submissions.map((submission, index) => (
-                <div key={submission.id} className="flex items-center gap-4 p-4 bg-input rounded-xl border   shadow-md">
+                <div key={submission.id} className="flex items-center gap-4 p-4 bg-input rounded-xl border border-border shadow-md">
                   <span className="text-lg font-bold text-primary">{index + 1}</span>
                   <div className="flex-1 grid grid-cols-1 md:grid-cols-2 gap-4">
-                    <Input type="text" value={submission.name} readOnly className="bg-background   text-foreground font-mono text-md" />
-                    <Input type="text" value={submission.username} readOnly className="bg-background   text-foreground font-mono text-md" />
+                    <Input type="text" value={submission.name} readOnly className="bg-background border-border text-foreground font-mono text-md" />
+                    <Input type="text" value={submission.username} readOnly className="bg-background border-border text-foreground font-mono text-md" />
                   </div>
                 </div>
               ))}
